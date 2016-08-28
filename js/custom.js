@@ -1,10 +1,10 @@
-$(document).ready(function(e){ "use strict";
+$(document).ready(function(){ "use strict";
 	$("#github").click(function(e) {
 		$("#github-popup").fadeIn(300);
 		e.stopImmediatePropagation();
 	});
-	$("#headshot").click(function(e) {
-		if ($("#headshot").attr('src') == "images/ethan.jpg") {
+	$("#headshot").click(function() {
+		if ($("#headshot").attr('src') === "images/ethan.jpg") {
 			$("#headshot").hide();
 			$("#headshot").attr('src', 'images/ethan-cartoon.png').fadeIn();
 		}
@@ -24,5 +24,8 @@ $(document).ready(function(e){ "use strict";
     	if($(".popup-window").is(":visible") && !$(".popup-content").is(e.target)) {
         	$(".popup-window").fadeOut(300);
     	}
+	});
+	$(function() {
+    	$('.box').matchHeight();
 	});
 });
